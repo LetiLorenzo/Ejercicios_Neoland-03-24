@@ -1,0 +1,92 @@
+/* Este archivo CSS está diseñado para dar estilo al 
+header de una página web. Define estilos para el header
+de una página web, haciendo uso del flexbox y media queries
+para garantizar una apariencia atractiva y responsiva en 
+diferentes tamaños de pantalla. */
+
+/* ALTURA Y DISEÑO DEL HEADER:
+-- heigth: 20vh --> establece la altura del header
+en un 20% del alto de la ventana.
+-- display: flex --> usa flexbox para alinear los 
+elementos.
+-- position: fixed --> fija el header en la parte
+superior de la ventana.
+-- width: 100% --> asigna un ancho del 100%.
+-- background: #0d0d0d --> asigna un fondo oscuro.*/
+
+header {
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background: #0d0d0d;
+
+/* SOMBRA Y Z-INDEX:
+-- Agrega una sombra suave al header.
+-- Establece un índice Z alto para que el header esté por 
+encima de otros elementos en lla página.*/
+
+    -webkit-box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
+    box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
+    z-index: 100;
+
+/* MEDIA QUERY PARA PANTALLAS PEQUEÑAS (MAX-WIDTH: 600px):
+-- Cambia la dirección del flujo a columna, cuando el ancho
+de la pantalla es menor o igual a 600px.*/
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  
+/*ESTILO DE LAS IMÁGENES DENTRO DEL NAV:
+-- Ancho de las imágenes dentro del nav.
+-- Aumento del ancho cuando la pantalla es pequeña.
+-- Agrega un efecto de escala en hover.*/
+
+    & nav img {
+      width: 20%;
+      margin: 0.8em;
+      transition: ease-in-out 0.3s;
+      @media (max-width: 600px) {
+        width: 40%;
+      }
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+/* ESTILO DE LA CLASE .logo: 
+-- Establece el ancho de la clase .logo.
+-- Ajusta el ancho y la altura en pantallas pequeñas.
+-- Usa object-fit: cover para asegurarase de que la imagen 
+cubra completamente el contenedor.*/
+
+    & .logo {
+      width: 20vw;
+      height: 100%;
+      object-fit: cover;
+      @media (max-width: 600px) {
+        width: 30vw;
+        height: 10vh;
+      }
+  
+      @media (min-width: 601px) {
+        object-fit: contain;
+      }
+    }
+
+/* ESTILO DEL NAV (BARRA DE NAVEGACIÓN): 
+-- Establece el ancho del nav.
+-- Utiliza flexbox para centrar los elementos horizontalmente
+y verticalmente. */
+
+    & nav {
+      width: 30vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }

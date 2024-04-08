@@ -1,0 +1,26 @@
+/* Estos estilos proporcionan un diseño fijo en la parte inferior de
+la ventana, con una sobra sutil, un fondo oscuro y colores específicos
+para el texto, y un elemento <span> dentro del footer.
+
+-- La etiqueta <span> es un elemento contenedor en línea. Generalmente 
+envuelve secciones de texto con fines de estilo o para agregar atributos 
+a una sección de texto sin crear una nueva línea de contenido.*/
+
+footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0d0d0d;
+    -webkit-box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
+    box-shadow: 0px 8px 30px -3px rgba(0, 0, 0, 0.61);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    color: #0def03;
+    & span {
+      color: white;
+    }
+  }

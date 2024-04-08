@@ -1,0 +1,18 @@
+#filterButton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 90vw;
+    margin: 3rem 0 1rem 0;
+  }
+  
+  .buttonFilter {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 5px;
+  }
+
+  /*Este código define estilos para el contenedor de botones de filtro
+  (#filterButton) y para los propios botones de filtro (buttonFilter).*/
