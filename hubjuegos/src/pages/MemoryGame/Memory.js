@@ -17,7 +17,7 @@ const template = () => `
     <div class="controls-c">
       <div class="portada"><img src="./sourceMemory/portada.gif"></div>
       <p id="result"></p>
-      <button id="start"><img src="./sourceMemory/star_game.gif"></button>
+      <button id="start"><img src="https://res.cloudinary.com/dfax6hcff/image/upload/v1712591868/MemoryImages/start_i4plxm.gif"></button>
 </div></div>`;
 
 const starGame = () => {
@@ -30,7 +30,7 @@ const starGame = () => {
       position: "center",
       title: "SUERTEEE 😘",
       imageUrl:
-        "https://res.cloudinary.com/dq186ej4c/image/upload/v1712312456/WmP_nkjrov.gif",
+        "https://res.cloudinary.com/dfax6hcff/image/upload/v1712587766/MemoryImages/HarleyQuinn_o0tmi5.gif",
       imageHeight: 300,
       imageAlt: "A tall image",
       showConfirmButton: false,
@@ -76,7 +76,7 @@ const init = () => {
   generador(cardValues);
 };
 
-export const PrintMemoryPage = () => {
+export const printMemoryPage = () => {
   document.querySelector("main").innerHTML = template();
   starGame();
 };

@@ -87,7 +87,7 @@ const listeners = (cardValues) => {
               getStateMemory("winCount") == Math.floor(cardValues.length / 2)
             ) {
               const result = document.getElementById("result");
-              result.innerHTML = `<div class="won"><img class src="./sourceMemory/YOUW.gif" />
+              result.innerHTML = `<div class="won"><img class src="https://res.cloudinary.com/dfax6hcff/image/upload/v1712591278/MemoryImages/deadpoolCorazon_l9u5w0.gif" />
             `;
               getStateMemory("stopGame")();
             }

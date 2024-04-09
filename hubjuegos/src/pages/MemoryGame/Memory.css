@@ -33,7 +33,7 @@
 #containerMemory {
   width: 100vw;
   min-height: 100vh;
-  background: url(https://c.tenor.com/0gjKrSIJuNIAAAAC/nyan-cat.gif);
+  background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589084/MemoryImages/DeadpoolJuego_tpnmhg.gif);
   background-size: 520px;
   background-position-x: 15px;
 }
@@ -83,7 +83,7 @@
   backface-visibility: hidden;
 }
 .card-before {
-  background-image: url(https://media.istockphoto.com/vectors/rainbow-square-gradient-colors-background-vector-id892009470?k=20&m=892009470&s=612x612&w=0&h=CU4B3M_9KHxKckQl2xUV9lvUSiQuUnstTijtQ_BUuMA=);
+  background-image: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712590718/MemoryImages/Groot_cph7ib.jpg);
   background-size: 100%;
   font-size: 2.8em;
   font-weight: 600;
@@ -106,9 +106,10 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: url(http://pa1.narvii.com/6262/98d31b354870e705baaab116fc5bfcef4306d342_00.gif);
+  background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589086/MemoryImages/DeadpoolAplauso_feizf0.gif);
   top: 120px;
 }
+
 
 button {
   border: none;
@@ -147,7 +148,7 @@ button {
 
 @media (max-width: 993px) {
   #containerMemory {
-    background: url(https://c.tenor.com/0gjKrSIJuNIAAAAC/nyan-cat.gif);
+    background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589084/MemoryImages/DeadpoolJuego_tpnmhg.gif);
     background-size: 20%;
     background-position-x: 50px;
   }
@@ -180,7 +181,7 @@ button {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background: url(http://pa1.narvii.com/6262/98d31b354870e705baaab116fc5bfcef4306d342_00.gif);
+    background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589084/MemoryImages/DeadpoolJuego_tpnmhg.gif);
   }
   .image {
     width: 70px;
@@ -190,7 +191,7 @@ button {
     width: 90%;
   }
   #containerMemory {
-    background: url(https://c.tenor.com/0gjKrSIJuNIAAAAC/nyan-cat.gif);
+    background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589084/MemoryImages/DeadpoolJuego_tpnmhg.gif);
     background-size: 45%;
     background-position-x: -15px;
   }
@@ -223,7 +224,7 @@ button {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background: url(http://pa1.narvii.com/6262/98d31b354870e705baaab116fc5bfcef4306d342_00.gif);
+    background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589084/MemoryImages/DeadpoolJuego_tpnmhg.gif);
   }
   .image {
     width: 70px;
@@ -233,7 +234,7 @@ button {
     width: 90%;
   }
   #containerMemory {
-    background: url(https://c.tenor.com/0gjKrSIJuNIAAAAC/nyan-cat.gif);
+    background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589084/MemoryImages/DeadpoolJuego_tpnmhg.gif);
     background-size: 30%;
   }
 }
@@ -267,7 +268,7 @@ button {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background: url(http://pa1.narvii.com/6262/98d31b354870e705baaab116fc5bfcef4306d342_00.gif);
+    background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589084/MemoryImages/DeadpoolJuego_tpnmhg.gif);
   }
 
   .image {
@@ -280,7 +281,7 @@ button {
   }
 
   #containerMemory {
-    background: url(https://c.tenor.com/0gjKrSIJuNIAAAAC/nyan-cat.gif);
+    background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589084/MemoryImages/DeadpoolJuego_tpnmhg.gif);
     background-size: 30%;
   }
 }
@@ -318,7 +319,7 @@ button {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background: url(http://pa1.narvii.com/6262/98d31b354870e705baaab116fc5bfcef4306d342_00.gif);
+    background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589084/MemoryImages/DeadpoolJuego_tpnmhg.gif);
   }
 
   .image {
@@ -326,7 +327,7 @@ button {
     height: 70px;
   }
   #containerMemory {
-    background: url(https://c.tenor.com/0gjKrSIJuNIAAAAC/nyan-cat.gif);
+    background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712589084/MemoryImages/DeadpoolJuego_tpnmhg.gif);
     background-size: 30%;
   }
 }

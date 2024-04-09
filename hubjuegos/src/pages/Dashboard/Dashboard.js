@@ -15,7 +15,7 @@ const template = () => `
         </figure>
       </li>
       <li>
-        <figure>
+        <figure id="navigateTopo">
           <img
             src="https://res.cloudinary.com/dq186ej4c/image/upload/v1689761641/pngwing.com_1_iq8zfk.png"
             alt=" go to wacka topo game"
@@ -24,8 +24,18 @@ const template = () => `
         </figure>
       </li>
       <li>
-        <figure>
+        <figure id="navigateAhorcado">
           <img
+            src="https://res.cloudinary.com/dfax6hcff/image/upload/v1712665505/MemoryImages/Ahorcado_u6wqkw.png"
+            alt=" go to hangman game"
+          />
+          <h2>HANGMAN</h2>
+        </figure>
+      </li>
+      <li>
+        <figure id="navigateMemory">
+        
+        <img
             src="https://res.cloudinary.com/dq186ej4c/image/upload/v1689761735/6168776_kfna36.png"
             alt="go to memory game"
           />
@@ -49,6 +59,17 @@ const addEventListeners = () => {
   navigateMemory.addEventListener("click", () => {
     initControler("Memory");  
 });
+
+  const navigateAhorcado = document.getElementById("navigateAhorcado");
+  navigateAhorcado.addEventListener("click", () => {
+  initControler("Ahorcado");
+});
+    
+  
+  const navigateTopo = document.getElementById("navigateTopo");
+  navigateTopo.addEventListener("click", () => {
+    initControler("Topo");
+  });
 };
 
 export const printTemplateDashboard = () => {
