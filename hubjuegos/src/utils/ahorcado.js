@@ -10,17 +10,17 @@ export const id = (str) => {
   return document.getElementById(str);
 };
 
-export const obtener_random = (num_min, num_max) => {
-  const amplitud_valores = num_max - num_min; //valor más alto - valor más bajo del random... (7 - 0)
-  const valor_al_azar =
-    Math.floor(Math.random() * amplitud_valores) +
-    num_min; /* 5 - 15 = 10 + 5 */
-  return valor_al_azar;
+export const obtenerRandom = (numMin, numMax) => {
+  const amplitudValores = numMax - numMin; //valor más alto - valor más bajo del random... (7 - 0)
+  const valorAzar =
+    Math.floor(Math.random() * amplitudValores) +
+    numMin; /* 5 - 15 = 10 + 5 */
+  return valorAzar;
 };
 
 export const iniciar = (event) => {
   const imagen = id("imagen");
-  imagen.src = "img/img0.png";
+  imagen.src = "sourceAhorcado/img0.png";
   const btn = id("jugar");
   btn.disabled = true;
   setErrores(0);
@@ -29,25 +29,25 @@ export const iniciar = (event) => {
   const parrafo = id("palabraAdivinar");
   parrafo.innerHTML = "";
 
-  const cant_palabras = palabras.length;
-  const valor_al_azar = obtener_random(0, cant_palabras);
-  setPalabraJuego(palabras[valor_al_azar]);
+  const cantPalabras = palabras.length;
+  const valorAzar = obtenerRandom(0, cantPalabras);
+  setPalabraJuego(palabras[valorAzar]);
 
-  const cant_letras = getInfoAhorcado().palabraJuego.length;
+  const cantLetras = getInfoAhorcado().palabraJuego.length;
 
   const botonLetras = document.querySelectorAll("#letras button");
   for (let i = 0; i < botonLetras.length; i++) {
     botonLetras[i].disabled = false;
   }
 
-  for (let i = 0; i < cant_letras; i++) {
+  for (let i = 0; i < cantLetras; i++) {
     const span = document.createElement("span");
     parrafo.appendChild(span);
   }
 };
 
 export const clickLetras = (event) => {
-  const spans = document.querySelectorAll("#palabra_a_adivinar span");
+  const spans = document.querySelectorAll("#palabraAdivinar span");
   const button = event.target;
   button.disabled = true;
 
@@ -58,30 +58,30 @@ export const clickLetras = (event) => {
   for (let i = 0; i < palabra.length; i++) {
     if (letra == palabra[i]) {
       spans[i].innerHTML = letra;
-      let aciertos = parseInt(getInfoAhorcado().cant_aciertos);
+      let aciertos = parseInt(getInfoAhorcado().cantAciertos);
       setAciertos(aciertos++);
       acerto = true;
     }
   }
 
   if (acerto == false) {
-    let errores = parseInt(getInfoAhorcado().cant_errores);
+    let errores = parseInt(getInfoAhorcado().cantErrores);
     console.log(errores);
     setErrores(errores + 1);
-    console.log("errores", getInfoAhorcado().cant_errores);
-    const source = `img/img${getInfoAhorcado().cant_errores}.png`;
+    console.log("errores", getInfoAhorcado().cantErrores);
+    const sourceAhorcado = `sourceAhorcado/img${getInfoAhorcado().cantErrores}.png`;
     const imagen = document.getElementById("imagen");
-    imagen.src = source;
+    imagen.src = sourceAhorcado;
   }
 
-  if (getInfoAhorcado().cant_errores == 7) {
+  if (getInfoAhorcado().cantErrores == 7) {
     id("resultado").innerHTML =
-      "Perdiste, la palabra era " + getInfoAhorcado().palabraJuego;
+      "¡Has perdido! 😒 La palabra era " + getInfoAhorcado().palabraJuego;
     gameOver();
   } else if (
-    getInfoAhorcado().cant_aciertos == getInfoAhorcado().palabraJuego.length
+    getInfoAhorcado().cantAciertos == getInfoAhorcado().palabraJuego.length
   ) {
-    id("resultado").innerHTML = "GANASTE!! WIIIIII";
+    id("resultado").innerHTML = "¡¡HAS GANADO!! BIEN HECHO 😘👌";
     gameOver();
   }
   console.log(
@@ -90,9 +90,9 @@ export const clickLetras = (event) => {
 };
 
 export const gameOver = () => {
-  const btn_letras = document.querySelectorAll("#letras button");
-  for (let i = 0; i < btn_letras.length; i++) {
-    btn_letras[i].disabled = true;
+  const botonLetras = document.querySelectorAll("#letras button");
+  for (let i = 0; i < botonLetras.length; i++) {
+    botonLetras[i].disabled = true;
   }
   const btn = id("jugar");
   btn.disabled = false;

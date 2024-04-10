@@ -1,7 +1,7 @@
 import{clickLetras} from "../../utils";
 import "./JuegoAhorcado.css"
 
-const template = () =>`
+const template =`
 <button>a</button>
 <button>b</button>
 <button>c</button>
@@ -33,7 +33,7 @@ const template = () =>`
 
 
 export const listeners = () => {
-    const botonLetras = document.querySelectorAll("#boton letras");
+    const botonLetras = document.querySelectorAll("#letras button");
     for (let i = 0; i < botonLetras.length; i++) {
       botonLetras[i].addEventListener("click", clickLetras);
     }

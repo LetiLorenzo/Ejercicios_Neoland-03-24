@@ -3,7 +3,7 @@ import { gameOver, id, iniciar } from "../../utils";
 import "./Ahorcado.css";
 
 const template = () => `
-<img id="imagen" src="img/img0.png" alt="Ahorcado" />
+<img id="imagen" src="sourceAhorcado/img0.png" alt="Ahorcado" />
 <div>
     <p id="palabraAdivinar"></p>
     <button id="jugar">Obtener palabra</button>

@@ -21,7 +21,8 @@ header {
     align-items: center;
     position: fixed;
     width: 100%;
-    background: #0d0d0d;
+    background: black;
+    background-image: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712587486/MemoryImages/maggie-simpson-4_srj7kl.gif);
 
 /* SOMBRA Y Z-INDEX:
 -- Agrega una sombra suave al header.
