@@ -8,3 +8,4 @@ export * from "./dataPokemon";
 export * from "./typePokemon";
 export * from "./paginacion";
 export * from "./memory";
+export * from "./ahorcado";

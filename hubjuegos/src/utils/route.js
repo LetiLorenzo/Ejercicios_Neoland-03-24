@@ -1,5 +1,5 @@
 import { getUser } from "../global/state/globalState";
-import { Login, PrintPokemonPage, printTemplateDashboard, PrintTopoPage, PrintAhorcadoPage} from "../pages";
+import { Login, PrintPokemonPage, printTemplateDashboard, PrintTopoPage, PrintAhorcado} from "../pages";
 import { printMemoryPage } from "../pages/MemoryGame/Memory";
 
 export const initControler = (pagesRender) => {
@@ -28,7 +28,7 @@ export const initControler = (pagesRender) => {
       printMemoryPage();
       break;
     case "Ahorcado":
-      PrintAhorcadoPage();
+      PrintAhorcado();
       break;
   }
 };

@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#letras{ 
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#boton letras{ 
+    width: 28px;
+    padding: 6px 0;
+    text-align: center;
+}
