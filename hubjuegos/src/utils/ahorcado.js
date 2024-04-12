@@ -59,7 +59,8 @@ export const clickLetras = (event) => {
     if (letra == palabra[i]) {
       spans[i].innerHTML = letra;
       let aciertos = parseInt(getInfoAhorcado().cantAciertos);
-      setAciertos(aciertos++);
+      console.log(aciertos)
+      setAciertos(aciertos+1);
       acerto = true;
     }
   }
@@ -73,16 +74,17 @@ export const clickLetras = (event) => {
     const imagen = document.getElementById("imagen");
     imagen.src = sourceAhorcado;
   }
-
+  console.log(getInfoAhorcado().cantAciertos)
   if (getInfoAhorcado().cantErrores == 7) {
     id("resultado").innerHTML =
       "¡Has perdido! 😒 La palabra era " + getInfoAhorcado().palabraJuego;
     gameOver();
-  } else if (
+  } else if(
     getInfoAhorcado().cantAciertos == getInfoAhorcado().palabraJuego.length
   ) {
+    console.log("entro")
     id("resultado").innerHTML = "¡¡HAS GANADO!! BIEN HECHO 😘👌";
-    gameOver();
+    gameOver(); //------------->>>>> ESTO NO LO RENDERIZA!!
   }
   console.log(
     "la letra " + letra + " en la palabra " + palabra + " ¿existe?: " + acerto

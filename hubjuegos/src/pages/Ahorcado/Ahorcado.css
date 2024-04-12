@@ -4,14 +4,67 @@
     box-sizing: border-box;
 }
 #palabraAdivinar{
-   height: 3em;
+   height: 3rem;
+   margin: 10px;
+   padding: 10px;
+   position: relative;
+   top: 50px;
+   
+
 }
 #palabraAdivinar span{ 
    vertical-align: bottom;
-   font-size: 2em;
+   font-size: 1rem;
    border-bottom: 2px solid black;
-   width: 30px;
+   margin-top: 15px;
+   width: 25px;
    text-align: center;
    margin-right: 6px;
    display: inline-block; 
+   padding: 10px;
+   position: relative
+
+}
+
+#bloque letras {
+   display: inline-block;
+   flex-direction: row;
+   
+ }
+
+/* .Ahorcado {
+   min-height: 100vh;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 300px 200px 80vh 200px 300px;
+   grid-template-areas: "letras"
+   "letras button"
+   "juego";
+   background: url(https://res.cloudinary.com/dfax6hcff/image/upload/v1712844681/MemoryImages/portada_ahorcado_fyfxrq.jpg);
+} */
+
+#contenido {
+   background: rgba(255, 255, 255, 0.195);
+   display: flex;
+}
+
+@media only screen and (max-width: 414px) {
+   #palabraAdivinar span {
+      font-size: 1.5rem;
+      margin-right: 4px;
+   }
+}
+
+@media only screen and (max-width: 375px) {
+   #palabraAdivinar span {
+      font-size: 1.2rem;
+      margin-right: 2px;
+   }
+}
+
+@media only screen and (max-width: 320px) {
+   #palabraAdivinar span {
+      font-size: 1rem;
+      margin-right: 1px;
+   }
 }
