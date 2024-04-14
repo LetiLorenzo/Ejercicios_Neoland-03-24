@@ -1,5 +1,5 @@
 export const palabras = [
-    "constantinopla", 
+    "homer", 
     "kiwi", 
     "amanecer", 
     "playa", 

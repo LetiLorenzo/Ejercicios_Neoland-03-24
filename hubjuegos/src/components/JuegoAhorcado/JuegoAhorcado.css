@@ -4,52 +4,74 @@
     box-sizing: border-box;
 }
 
-#letras{ 
-    margin-top: 30px;
-    display: inline-block;
-    flex-wrap: wrap;
-    text-align: center;
+#letras {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*en el contenedor de contenido poner direction flex: column*/
 
 #letras button{ 
-    width: 35px;
-    padding: 6px 0 6px 0;
+    width: 100px;
+    height: 35px;
+    display: inline-flex;
+    padding: 6px 6px 6px 6px;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    position: relative;
+    top: -150px;
     border-radius: 20px;
     background: rgb(250, 247, 86);
+    font-weight: bold;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 90vw;
+    margin: 3rem 0 1rem 0; */
 }
+
+
+/* #jugar {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 30%; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+} */
 
 #jugar{
   width: 150px;
   height: 40px;
   margin-top: 100px;
   margin-bottom: 20px;
-  margin-left: 50px;
+  margin-left: 95px;
   align-items: center;
   text-align: center;
+  position: relative;
+  top: -120px;
   flex-wrap: wrap;
   padding: 6px 0;
   border-radius: 100px;
-  background: aquamarine;
+  background: #64C9ED;
 }
 
-
-
-#imagen{
-  width: 300px;
-  height: 300px;
-  margin-top: 70px;
-  margin-bottom: 30px;
-  margin-left: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 6px 0;
-
+#jugar:hover{
+  background-color:  rgb(250, 247, 86);
 }
+/* 
+#bloque letras {
+  display: inline-block;
+  flex-direction: row;
+  width: 100%;
+
+
+} */
   
   @media only screen and (max-width: 414px) {
     #letras button {

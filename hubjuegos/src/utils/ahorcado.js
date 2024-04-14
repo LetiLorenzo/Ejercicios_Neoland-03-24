@@ -84,7 +84,7 @@ export const clickLetras = (event) => {
   ) {
     console.log("entro")
     id("resultado").innerHTML = "¡¡HAS GANADO!! BIEN HECHO 😘👌";
-    gameOver(); //------------->>>>> ESTO NO LO RENDERIZA!!
+    gameOver(); 
   }
   console.log(
     "la letra " + letra + " en la palabra " + palabra + " ¿existe?: " + acerto
@@ -98,4 +98,5 @@ export const gameOver = () => {
   }
   const btn = id("jugar");
   btn.disabled = false;
+
 };
