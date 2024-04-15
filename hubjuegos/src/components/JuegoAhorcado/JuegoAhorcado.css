@@ -12,91 +12,58 @@
 /*en el contenedor de contenido poner direction flex: column*/
 
 #letras button{ 
-    width: 100px;
-    height: 35px;
+    min-width: 30px;
+    height: 30px;
     display: inline-flex;
-    padding: 6px 6px 6px 6px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2px 2px 2px 2px; 
+    align-content: center;
     justify-content: center;
-    align-items: center;
+    align-items: center;  
     position: relative;
-    top: -150px;
-    border-radius: 20px;
+    top: -140px;
+    border-radius: 50px;
     background: rgb(250, 247, 86);
     font-weight: bold;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 90vw;
-    margin: 3rem 0 1rem 0; */
 }
 
 
-/* #jugar {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    border-radius: 30%; 
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-} */
-
 #jugar{
   width: 150px;
-  height: 40px;
+  height: 30px;
+  font-weight: bold;
   margin-top: 100px;
   margin-bottom: 20px;
-  margin-left: 95px;
-  align-items: center;
+  margin-left: 10px;
+  /* align-items: center; */
   text-align: center;
   position: relative;
-  top: -120px;
-  flex-wrap: wrap;
+  top: -130px;
+  /* flex-wrap: wrap; */
   padding: 6px 0;
   border-radius: 100px;
   background: #64C9ED;
+  transition: background-color 0.4s ease;
 }
 
 #jugar:hover{
   background-color:  rgb(250, 247, 86);
 }
-/* 
-#bloque letras {
-  display: inline-block;
-  flex-direction: row;
-  width: 100%;
 
 
-} */
-  
-  @media only screen and (max-width: 414px) {
-    #letras button {
-      width: 20px;
-      padding: 4px 0;
-    }
+/* Media Query para MacBook Air */
+@media screen and (max-width: 1440px) {
+  #letras button {
+    min-width: 24px;
+    height: 24px;
+    padding: 4px 0;
   }
 
-  @media only screen and (max-width: 414px) {
-    #letras{ 
-      margin-top: 30px;
-      display: inline-block;
-      flex-wrap: wrap;
+  #jugar {
+    min-width: 26px;
+    height: 26px;
+    padding: 2px;
+    top: -130px;
   }
-  }
-
-  @media only screen and (max-width: 414px) {
-    #juego {
-      width: 150px;
-      height: 40px;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-      padding: 6px 0;
-      border-radius: 100px;
-      background: aquamarine;
-    }
-  }
+}

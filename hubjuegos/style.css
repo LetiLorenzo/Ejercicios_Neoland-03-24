@@ -1,3 +1,7 @@
+:root{
+  --background-color: aqua;
+}
+
 /*Estilos generales de la aplicación. Se necesita reseteo general siempre.*/
 * {
   padding: 0;
@@ -30,4 +34,7 @@
   & footer {
     height: 10vh;
   }
+
+  
+ 
 }

@@ -2,6 +2,7 @@ import{clickLetras} from "../../utils";
 import "./JuegoAhorcado.css"
 
 const template =`
+<div id="letras button">
 <button>a</button>
 <button>b</button>
 <button>c</button>
@@ -28,7 +29,7 @@ const template =`
 <button>x</button>
 <button>y</button>
 <button>z</button>
-`;
+</div>`;
 
 
 

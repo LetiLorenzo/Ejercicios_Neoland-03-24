@@ -6,16 +6,17 @@ const template = () => `
 <div id=class"Ahorcado">
 <div id="contenido">
 <img id="imagen" src="sourceAhorcado/img0.png" alt="Ahorcado" />
-<div id="bloque letras">
-    <p id="palabraAdivinar"></p>
-    <button id="jugar">Obtener palabra</button>
+<div id="bloqueLetras">
+     <p id="palabraAdivinar"></p>
+     <button id="jugar">Obtener palabra</button>
 
-    <p id="resultado"></p>
+     <p id="resultado"></p>
 
-    <div id="letras"></div>
-    <div id="letras button"></div>
-</div>
-</div>
+     <div id="letras">
+     <div id="letras button"></div>
+     </div>
+ </div>
+ </div>
 </div>
 `;
 
