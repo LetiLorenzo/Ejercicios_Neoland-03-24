@@ -14,7 +14,7 @@ dotenv.config();
 const User = require("../models/User.model");
 
 //! -----------------------------------------------------------------------
-//? ------------------------------utils - middlewares----------------------
+//? ------------------------utils - middlewares - states ------------------
 //! -----------------------------------------------------------------------
 const { deleteImgCloudinary } = require("../../middleware/files.middleware");
 const randomCode = require("../../utils/randomCode");
@@ -33,6 +33,7 @@ const setError = require("../../helpers/handle-error");
 //! -----------------------------------------------------------------------------
 //? ----------------------------REGISTER LARGO EN CODIGO ------------------------
 //! -----------------------------------------------------------------------------
+
 const registerLargo = async (req, res, next) => {
   // capturamos la imagen nueva subida a cloudinary
   let catchImg = req.file?.path;
@@ -287,9 +288,134 @@ const sendMailRedirect = async (req, res, next) => {
   }
 };
 
+const resendCode = async (req, res, next) => {
+  console.log("body", req);
+  try {
+    //! vamos a configurar nodemailer porque tenemos que enviar un codigo
+    const email = process.env.EMAIL;
+    const password = process.env.PASSWORD;
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: email,
+        pass: password,
+      },
+    });
+
+    //! hay que ver que el usuario exista porque si no existe no tiene sentido hacer ninguna verificacion
+    const userExists = await User.findOne({ email: req.body?.email });
+
+    if (userExists) {
+      const mailOptions = {
+        from: email,
+        to: req.body?.email,
+        subject: "Confirmation code",
+        text: `tu codigo es ${userExists.confirmationCode}`,
+      };
+
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.log(error);
+          return res.status(404).json({
+            resend: false,
+          });
+        } else {
+          console.log("Email sent: " + info.response);
+          return res.status(200).json({
+            resend: true,
+          });
+        }
+      });
+    } else {
+      return res.status(404).json("User not found");
+    }
+  } catch (error) {
+    return next(setError(500, error.message || "Error general send code"));
+  }
+};
+
+//! ------------------------------------------------------------------------
+//? -------------------------- CHECK NEW USER------------------------------
+//! ------------------------------------------------------------------------
+
+const checkNewUser = async (req, res, next) => {
+  /* Pasos a seguir:
+  1) -> email y el codigo de confirmacion
+  2) -> buscar el user en la bdo con el email 
+  3) -> comparar los codigos
+  4) -> hacer un update y cambiar la clave check
+
+
+  Error: 
+   -> el email no exista  en el back
+   -> los codigos no son iguales
+   -> que falle la update
+  */
+
+  try {
+    //! nos traemos de la req.body el email y codigo de confirmation
+    const { email, confirmationCode } = req.body;
+
+    const userExists = await User.findOne({ email });
+
+    if (!userExists) {
+      //!No existe----> 404 de no se encuentra
+      return res.status(404).json("User not found");
+    } else {
+      // cogemos que comparamos que el codigo que recibimos por la req.body y el del userExists es igual
+      if (confirmationCode === userExists.confirmationCode) {
+        try {
+          await userExists.updateOne({ check: true });
+
+          //! hacer un test para ver si a actualizado la clave
+
+          // hacemos un testeo de que este user se ha actualizado correctamente, hacemos un findOne
+          const updateUser = await User.findOne({ email });
+
+          // este finOne nos sirve para hacer un ternario que nos diga si la propiedad vale true o false
+          return res.status(200).json({
+            testCheckOk: updateUser.check == true ? true : false,
+          });
+        } catch (error) {
+          return res.status(404).json(error.message);
+        }
+      } else {
+        ///! el else de cuando los codigos no son iguales
+        try {
+          /// En caso dec equivocarse con el codigo lo borramos de la base datos y lo mandamos al registro
+          await User.findByIdAndDelete(userExists._id);
+
+          // borramos la imagen
+          deleteImgCloudinary(userExists.image);
+
+          // devolvemos un 200 con el test de ver si el delete se ha hecho correctamente
+          return res.status(200).json({
+            userExists,
+            check: false,
+
+            // test en el runtime sobre la eliminacion de este user
+            delete: (await User.findById(userExists._id))
+              ? "error delete user"
+              : "ok delete user",
+          });
+        } catch (error) {
+          return res
+            .status(404)
+            .json(error.message || "error general delete user");
+        }
+      }
+    }
+  } catch (error) {
+    // siempre en el catch devolvemos un 500 con el error general
+    return next(setError(500, error.message || "General error check code"));
+  }
+};
+
 module.exports = {
   registerLargo,
   registerUtil,
   registerWithRedirect,
   sendMailRedirect,
+  resendCode,
+  checkNewUser,
 };
