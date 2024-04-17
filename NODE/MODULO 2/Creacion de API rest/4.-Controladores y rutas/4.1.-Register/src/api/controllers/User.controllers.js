@@ -1,3 +1,4 @@
+//Primero nos requerimos las librerías
 //! -----------------------------------------------------------------------
 //? ------------------------------librerias--------------------------------
 //! -----------------------------------------------------------------------
@@ -5,7 +6,7 @@ const nodemailer = require("nodemailer");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
 const dotenv = require("dotenv");
-
+//Siempre que reequirimos dotenv reequier su configuración
 dotenv.config();
 
 //! -----------------------------------------------------------------------
@@ -33,6 +34,18 @@ const setError = require("../../helpers/handle-error");
 //! -----------------------------------------------------------------------------
 //? ----------------------------REGISTER LARGO EN CODIGO ------------------------
 //! -----------------------------------------------------------------------------
+/*En teoría hay que seguir los principios SOLID (la single responsability, la S, y quiere decir 
+que las funciones tienen que tenr una única responsabilidad, de lo contrario será más difícil 
+poder gestionar los errores). Aún así, tenemos aquí el ejemplo del register largo.*/
+
+//Hacemos un CRUD: Create, Read, Update and Delete.
+//Las funciones van a ser asíncronas porque van a interactuar con mongoDB, por lo tanto no será la acción instantánea.
+
+//un controlador siempre tiene que tener la request (petición que hago), response (respuesta que me envía)
+//y next(el middleware, para que si queremos continuar o mandar errores, mandamos el next y decimos que continúe, por ejemplo).
+
+//si quiero gestionar un async await siempre hay que meter el try-catch
+
 const registerLargo = async (req, res, next) => {
   // capturamos la imagen nueva subida a cloudinary
   let catchImg = req.file?.path;
