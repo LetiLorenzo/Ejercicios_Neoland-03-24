@@ -34,6 +34,7 @@ const setError = require("../../helpers/handle-error");
 //? ----------------------------REGISTER LARGO EN CODIGO ------------------------
 //! -----------------------------------------------------------------------------
 const registerLargo = async (req, res, next) => {
+  console.log("body", req.body);
   // capturamos la imagen nueva subida a cloudinary
   let catchImg = req.file?.path;
   try {
@@ -97,7 +98,7 @@ const registerLargo = async (req, res, next) => {
           return res.status(404).json("error save user");
         }
       } catch (error) {
-        return res.status(404).json(error.message);
+        return res.status(404).json("soy el catch 1");
       }
     } else {
       if (req.file) deleteImgCloudinary(catchImg);
@@ -106,7 +107,7 @@ const registerLargo = async (req, res, next) => {
   } catch (error) {
     // SIEMPRE QUE HAY UN ERROR GENERAL TENEMOS QUE BORRAR LA IMAGEN QUE HA SUBIDO EL MIDDLEWARE
     if (req.file) deleteImgCloudinary(catchImg);
-    return next(error);
+    return res.status(404).json("soy el catch 2");
   }
 };
 //! -----------------------------------------------------------------------------
@@ -182,16 +183,16 @@ const registerWithRedirect = async (req, res, next) => {
     // Hacemos destructuring del email y name que viene del body
     const { email, name } = req.body;
 
-    // ---> comprobamos si existe el usuario
+//     // ---> comprobamos si existe el usuario
 
-    // aqui se ponen el email y el name por separado porque ambos son unique,
-    // si no fueran unique hay que meterlo como {email:req.body.email, name: req.body.name}
+//     // aqui se ponen el email y el name por separado porque ambos son unique,
+//     // si no fueran unique hay que meterlo como {email:req.body.email, name: req.body.name}
     const userExist = await User.findOne(
       { email: req.body.email },
       { name: req.body.name }
     );
 
-    // SI NO EXISTE ENTONCES HACEMOS LA LÓGICA DEL REGISTER
+//     // SI NO EXISTE ENTONCES HACEMOS LA LÓGICA DEL REGISTER
     if (!userExist) {
       // Creamos un nuevo usuario con el req.body y le añadimos el codigo de confirmacion
       const newUser = new User({ ...req.body, confirmationCode });
