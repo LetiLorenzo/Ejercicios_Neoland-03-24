@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-width: 100vw;
+  min-height: 100vh;
+  --font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+  --font-color: rgb(252, 93, 239);
+  background-color: rgba(127, 255, 212, 0.177);
+
+  & #root{
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  & #cuerpo{
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+  }
+
+  & h1{
+    color: var(--font-color);
+    margin: 1rem;
+  }
+
+  & h2{
+    margin:1rem;
+  }
+  
+  & p{margin: 1rem;
+  }
+
+  & image{
+    margin: 1rem
+  }
+}
