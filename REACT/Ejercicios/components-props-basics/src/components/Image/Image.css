@@ -2,7 +2,7 @@ image{
     & img{
         object-fit: cover;
         border-radius: 10%;
-                   
+        margin: 1rem;          
     }
     
 }

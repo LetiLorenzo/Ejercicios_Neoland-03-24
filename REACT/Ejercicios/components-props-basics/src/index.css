@@ -26,20 +26,5 @@ body{
     align-items: center;
     font-family: var(--font-family);
   }
-
-  & h1{
-    color: var(--font-color);
-    margin: 1rem;
-  }
-
-  & h2{
-    margin:1rem;
-  }
   
-  & p{margin: 1rem;
-  }
-
-  & image{
-    margin: 1rem
-  }
 }
