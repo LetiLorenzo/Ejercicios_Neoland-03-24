@@ -10,6 +10,7 @@
 
 import React from "react";
 import { Title, SubTitle, Image, Paragraph} from "./Components";
+import "./App.css";
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
         <Title className={"Title"} texto={"Welcome to Components ReactJS"} />
         <SubTitle
           className={"SubTitle"}
-          texto={"This is a example components with ReactJS"}
+          texto={"This is a components example with ReactJS"}
         />
         <Image
           description={"Gag sofa Simpsons"}
