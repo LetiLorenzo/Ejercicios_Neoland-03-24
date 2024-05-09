@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Honk&family=Knewave&display=swap');
+
+
+body{
+    background-color: #6b22365c; /*#76b14f89;*/
+}
+#api{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Honk", sans-serif;
+   
+   
+}
+
+#characters-img{
+    width: 220px;
+    height: 220px;
+    border-radius: 30%;
+    object-fit: cover;
+}
+
+#characters{
+   margin: 1rem 1rem 1rem 1rem;
+}
